@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>料金 | GINRIN</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- ナビゲーション -->
+    <div id="site-nav"></div>
+
+    <!-- ページタイトル -->
+    <div class="subpage-title-wrapper">
+        <h1 class="subpage-title">料金</h1>
+    </div>
+
+    <!-- 料金情報 -->
+    <main class="price-section">
+
+        <!-- 乗合 -->
+        <section class="price-block">
+            <h2 class="red-box">乗合</h2>
+            <table>
+                <tr>
+                    <th>近距離便（半日）</th>
+                    <td>￥7,000</td>
+                    <td>頴娃、枕崎、坊 周辺</td>
+                </tr>
+                <tr>
+                    <th>近距離便</th>
+                    <td>￥8,000</td>
+                    <td>頴娃、枕崎、坊 周辺</td>
+                </tr>
+                <tr>
+                    <th>中距離便</th>
+                    <td>￥10,000</td>
+                    <td>開聞、秋目 周辺</td>
+                </tr>
+                <tr>
+                    <th>夜焚き便（半夜）</th>
+                    <td>￥7,000</td>
+                    <td>枕崎</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- チャーター -->
+        <section class="price-block">
+            <h2 class="red-box">チャーター</h2>
+            <table>
+                <tr>
+                    <th>近距離便</th>
+                    <td>￥50,000</td>
+                    <td>頴娃、枕崎、坊 周辺</td>
+                </tr>
+                <tr>
+                    <th>中距離便</th>
+                    <td>￥70,000</td>
+                    <td>開聞、秋目 周辺</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 注意事項 -->
+        <section class="note-box">
+            <ul>
+                <li>定員9名になります（船長は含んでいません）。</li>
+                <li>上の利用料金は基本プランになります。釣り物によって料金が変わりますので、事前に船長にご確認ください。</li>
+                <li>出港・回収時刻は季節によって変動しますので、お問い合わせください。</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <div id="site-footer"></div>
+
+    <!-- スクリプト -->
+    <script>
+        fetch('nav.html').then(res => res.text()).then(html => {
+            document.getElementById('site-nav').innerHTML = html;
+        });
+        fetch('footer.html').then(res => res.text()).then(html => {
+            document.getElementById('site-footer').innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

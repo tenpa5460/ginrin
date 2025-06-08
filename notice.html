@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>注意事項 | GINRIN</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- ナビゲーション -->
+    <div id="site-nav"></div>
+
+    <!-- ページタイトル -->
+    <div class="subpage-title-wrapper">
+        <h1 class="subpage-title">注意事項</h1>
+        <p class="notice-sub">安全に、楽しく釣りをしていただくため、注意事項をお守りください。</p>
+    </div>
+
+    <!-- 注意事項リスト -->
+    <main class="notice-section">
+        <div class="notice-list">
+            <ul>
+                <li>救命胴衣は、必ず着用してください。（お持ちでない場合は、事前に船長にお伝えください。）</li>
+                <li>船が走行中は、むやみに動き回らないでください。</li>
+                <li>天候、その他船長の判断により、出航の中止や時間前の帰港となる場合がありますので、ご了承ください。</li>
+                <li>ゴミは、海に捨てたり、船に放置したりせず、お持ち帰りください。</li>
+                <li>ルール、マナーを守って、釣りを楽しむと共に、水産資源の保護と漁場の保全にご協力ください。</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <div id="site-footer"></div>
+
+    <!-- スクリプト（共通） -->
+    <script>
+        fetch('nav.html').then(res => res.text()).then(html => {
+            document.getElementById('site-nav').innerHTML = html;
+        });
+        fetch('footer.html').then(res => res.text()).then(html => {
+            document.getElementById('site-footer').innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

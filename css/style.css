@@ -1,0 +1,302 @@
+/* ─────────────────────────────────────────────────────────────────────
+   共通リセット & ベーススタイル
+──────────────────────────────────────────────────────────────────── */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* --- ナビゲーション --- */
+.nav {
+    position: absolute;
+    top: 20px;
+    right: 200px;
+    z-index: 10;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+body.home .nav a {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   各種共通コンポーネント
+──────────────────────────────────────────────────────────────────── */
+/* サブページタイトル */
+.subpage-title-wrapper {
+    text-align: center;
+    margin: 80px auto 30px;
+}
+
+.subpage-title {
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 3px solid red;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* テーブル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table th,
+table td {
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    padding: 8px 0;
+}
+
+/* 見出しボックス */
+.red-box {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.blue-box {
+    background-color: #00bbff;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 注意欄 */
+.note-box,
+.notice-list {
+    background-color: #fff5f5;
+    border: 1px solid red;
+    padding: 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.note-box ul,
+.notice-list ul {
+    list-style: disc;
+    padding-left: 1.5em;
+}
+
+/* セクション共通 */
+section {
+    padding: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* フッター */
+footer {
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .contact {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+footer .contact strong {
+    font-size: 1.5em;
+    color: red;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Home 固有 */
+section.instagram-section,
+section.shop-info {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 25px 20px;
+}
+
+.instagram-section .section-wrapper,
+.shop-info .section-wrapper {
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* 画像スライダー */
+.image-box.slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-box.slider .slide {
+    flex: 1 1 45%;
+    max-width: 45%;
+    margin: 10px;
+}
+
+.image-box.slider .slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* モバイル用ボトムナビ */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    z-index: 999;
+    padding: 5px 0;
+}
+
+.bottom-nav a {
+    text-align: center;
+    text-decoration: none;
+    color: #d70000;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom-nav img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   レスポンシブ調整
+──────────────────────────────────────────────────────────────────── */
+/* スマホ向け（767px以下） */
+@media (max-width: 767px) {
+
+    /* 上部ナビを非表示 */
+    .nav {
+        display: none;
+    }
+
+    /* 下部ナビを表示 */
+    .bottom-nav {
+        display: flex;
+    }
+
+    /* スライダー画像を横並び＆スクロール可能に */
+    .image-box.slider {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .image-box.slider .slide {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+
+    /* Hero セクションの高さ調整 */
+    .hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    /* ④ ショップ情報エリア（.shop-info-inner）も縦並びに */
+    .shop-info-inner {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center;
+        /* 画像＋テキストを中央揃えに */
+    }
+
+    .shop-left,
+    .shop-right {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .shop-left .shop-logo {
+        width: 180px !important;
+    }
+
+    .shop-left .shop-details p {
+        font-size: 14px !important;
+    }
+
+    .shop-right .shop-photo {
+        width: 90% !important;
+        max-width: 300px !important;
+        margin: 0 auto;
+    }
+}
+
+/* PC向け（768px以上） */
+@media (min-width: 768px) {
+
+    /* 上部ナビを表示 */
+    .nav {
+        display: block;
+    }
+
+    /* 下部ナビを非表示 */
+    .bottom-nav {
+        display: none;
+    }
+}
