@@ -350,6 +350,43 @@
             }
         }
 
+        /* デフォルトでは非表示 */
+        .notice-mobile {
+            display: none;
+            padding: 20px 20px 10px;
+            margin-top: 0px;
+        }
+
+        .notice-title {
+            font-size: 24px;
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        .notice-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .notice-list li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* スマホでのみ表示 */
+        @media screen and (max-width: 768px) {
+            .notice-mobile {
+                display: block;
+            }
+
+            /* スマホナビから「注意事項」リンクを非表示にする場合 */
+            .bottom-nav a[href="notice.html"] {
+                display: none;
+            }
+        }
+
+
         @media (max-width: 767px) {
 
             /* Instagram セクション全体の wrapper はそのまま */
@@ -533,6 +570,21 @@
             </div>
         </div>
     </section>
+
+    <!-- スマホ専用の注意事項セクション -->
+    <section class="notice-mobile">
+        <div class="section-wrapper">
+            <h2 class="notice-title">注意事項</h2>
+            <ul class="notice-list">
+                <li>救命胴衣は、必ず着用してください。（お持ちでない場合は、事前に船長にお伝えください。）</li>
+                <li>船の走行中は、むやみに動き回らないでください。</li>
+                <li>天候、その他船長の判断により、出航の中止や時間前の帰港となる場合がありますので、ご了承ください。</li>
+                <li>ゴミは、海に捨てたり、船に放置したりせず、お持ち帰りください。</li>
+                <li>ルール、マナーを守って、釣りを楽しむと共に、水産資源の保護と漁場の保全にご協力ください。</li>
+            </ul>
+        </div>
+    </section>
+
 
 
 
